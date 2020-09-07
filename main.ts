@@ -38,6 +38,44 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . . . . . . . . . . . 
             `)
         pause(100)
+        mySprite.setImage(img`
+            . . . . . . . . . f . . . . . . 
+            . . . . . . . . f . f . . . . . 
+            . . . . . . . . f . f . . . . . 
+            . . . . . . . . . f . . . . . . 
+            . . . . . f f f f f f f f f . . 
+            . . . . f . . f f f f . . f f . 
+            . . . . f . . . f f . . . . f . 
+            . . . . f . . . f f . . . . . . 
+            . . . . . . . . f f f . . . . . 
+            . . . . . . . f f . f f . . . . 
+            . . . . . . f f . . . f . . . . 
+            . . . . . f . . . . . f . . . . 
+            . . . . f . . . . . . f . . . . 
+            . . . . . . . . . . f . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+        pause(100)
+        mySprite.setImage(img`
+            . . . . . . . . . f . . . . . . 
+            . . . . . . . . f . f . . . . . 
+            . . . . . . . . f . f . . . . . 
+            . . . . . . . . . f . . . . . . 
+            . . . . . f f f f f f f f f . . 
+            . . . . f . . f f f f . . f f . 
+            . . . . f . . . f f . . . . f . 
+            . . . . f . . . f f . . . . . . 
+            . . . . . . . . f f f . . . . . 
+            . . . . . . . f f . f f . . . . 
+            . . . . . . f f . . . f . . . . 
+            . . . . . f . . . . . f . . . . 
+            . . . . f . . . . . . f . . . . 
+            . . . . . . . . . . f . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+        pause(100)
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -169,6 +207,44 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
             . . 4 4 f 9 9 9 9 9 9 f 4 4 . . 
             . . . . . f f f f f f . . . . . 
             . . . . . f f . . f f . . . . . 
+            `)
+        pause(100)
+        mySprite.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f f f f . . . . . . 
+            . . . . f f f f f f f f . . . . 
+            . . . f f f f f f f f f f . . . 
+            . . f f f f f f f f f f f f . . 
+            . . f f f f f f f f f f f f . . 
+            . f f f f f f f f f f f f f f . 
+            . f f f f f e e e e f f f f f . 
+            . . f e f b 8 4 4 8 b f e f . . 
+            . . f e 4 1 8 d d 8 1 4 e f . . 
+            . . e f e 4 d d d d 4 e f . . . 
+            . . e 4 d d e 6 6 6 6 f e f . . 
+            . . . e d d e 6 6 6 6 f 4 e . . 
+            . . . . e e f 9 9 9 9 f . . . . 
+            . . . . . f f f f f f f . . . . 
+            . . . . . . . . . f f f . . . . 
+            `)
+        pause(100)
+        mySprite.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f f f f . . . . . . 
+            . . . . f f f f f f f f . . . . 
+            . . . f f f f f f f f f f . . . 
+            . . f f f f f f f f f f f f . . 
+            . . f f f f f f f f f f f f . . 
+            . f f f f f f f f f f f f f f . 
+            . f f f f f e e e e f f f f f . 
+            . . f e f b 8 4 4 8 b f e f . . 
+            . . f e 4 1 8 d d 8 1 4 e f . . 
+            . . e f e 4 d d d d 4 e f . . . 
+            . . e 4 d d e 6 6 6 6 f e f . . 
+            . . . e d d e 6 6 6 6 f 4 e . . 
+            . . . . e e f 9 9 9 9 f . . . . 
+            . . . . . f f f f f f f . . . . 
+            . . . . . . . . . f f f . . . . 
             `)
         pause(100)
         mySprite.setImage(img`
