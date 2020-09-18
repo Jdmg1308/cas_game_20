@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "palette": "*"
+        "palette": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.3.0"
     },
     "files": [
         "main.blocks",
