@@ -269,7 +269,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         `, mySprite, 69, 0)
     music.pewPew.play()
-    pause(500)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Martin) {
@@ -397,28 +396,6 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.secondary, function (sprite, otherSprite) {
-    music.playMelody("C E G B C5 G D E ", 300)
-    game.setDialogCursor(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . f f f . . . . 
-        . . . . . . f f f 2 2 f . . . . 
-        . . . . . . f 2 2 2 2 f . . . . 
-        . . . . . . . f 2 2 f . . . . . 
-        . . . . . . f 2 f 2 f . . . . . 
-        . . . . . f 2 f . f f . . . . . 
-        . . . . f 2 f . . . . . . . . . 
-        . . . . f f . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `)
-    game.showLongText("Peeepeee poopoo", DialogLayout.Bottom)
-})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     statusbar.value += 2
 })
@@ -538,8 +515,8 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
                 . . . e e e e e e e e e e e . . 
                 . . . e e e e e e e e e e e . . 
                 . . e e e e e e f f e e e e . . 
-                . . e e e 4 4 f b 9 4 4 e e . . 
-                . . e e e 4 d 4 1 9 d d e . . . 
+                . . e e e e e f b 9 4 4 e e . . 
+                . . e e e e e 4 1 9 d d e . . . 
                 . . . e e e f 4 d d d d f . . . 
                 . . . e e f e e 4 4 4 e f . . . 
                 . . . e f 4 d d e a a a f . . . 
@@ -549,6 +526,149 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
                 . . . . . . . f f f . . . . . . 
                 `)
             pause(100)
+        }
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile7, function (sprite, location) {
+    if (tiles.tileAtLocationEquals(tiles.getTileLocation(17, 5), myTiles.tile7) || tiles.tileAtLocationEquals(tiles.getTileLocation(17, 4), myTiles.tile7)) {
+        tiles.setTilemap(tiles.createTilemap(hex`1a0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010101010103010101010101010101010101020100000000010101010101010101010101010101010101010101020000000001010101010101010101010101010101010101010101000000000101010101020101010101010101010101010101010100000000010101010101010101010101010101010101010101010000000001010101010101010101010101010201010101010101000000000101010101010101020101010101010101010101010100000000010101010101010101010101010101010101010101010000000001010101010101010101010101010101010101010101000000000101020101010101010102010101010101010101010100000000010101010101010101010101010101010101010102010000000001010101010101010101010101010301010101020102000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+            ..........................
+            .222222222222222222222222.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .2......................2.
+            .222222222222222222222222.
+            ..........................
+            `, [myTiles.transparency16,sprites.dungeon.floorLight2,sprites.dungeon.floorLight5,sprites.dungeon.floorLightMoss], TileScale.Sixteen))
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(10, 8))
+        pause(100)
+        music.playMelody("E - E - E - E - ", 640)
+        if (Martin) {
+            PersonajeSec1 = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . 4 4 4 4 4 4 4 4 . . . . 
+                . . . 4 4 4 4 4 4 4 4 4 4 . . . 
+                . . . 4 4 4 4 4 4 4 4 4 4 . . . 
+                . . 4 4 4 4 4 4 4 4 4 4 4 4 . . 
+                . . 4 4 4 4 4 4 4 4 4 4 4 4 . . 
+                . . 4 4 4 4 e e e e 4 4 4 4 . . 
+                . 4 4 e 4 b 7 4 4 7 b 4 e 4 4 . 
+                . 4 4 e 4 1 7 d d 7 1 4 e 4 4 . 
+                . . 4 e e d d d d d d e e 4 . . 
+                . . . f e e 4 4 4 4 e e f . . . 
+                . . e 4 f 7 7 7 7 7 7 f 4 e . . 
+                . . 4 d f 7 7 7 7 7 7 f d 4 . . 
+                . . 4 4 f 7 7 7 7 7 7 f 4 4 . . 
+                . . . . . 8 8 8 8 8 8 . . . . . 
+                . . . . . 8 8 . . 8 8 . . . . . 
+                `, SpriteKind.secondary)
+            tiles.placeOnTile(PersonajeSec1, tiles.getTileLocation(14, 5))
+            PersonajeSec2 = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . e e e e e e e e . . . . 
+                . . . e e e e e e e e e e . . . 
+                . . . e e e e e e e e e e . . . 
+                . . e e e e e e e e e e e e . . 
+                . . e e e e e e e e e e e e . . 
+                . . e e e f f e e f f e e e e . 
+                . . e e f 1 9 4 4 9 1 f e e e . 
+                . e e e e 1 9 d d 9 1 e e e . . 
+                . e e e e d d d d d d e e e . . 
+                . . e e e e 4 4 4 4 e e e e . . 
+                . . 4 4 e e a a a a a f 4 4 . . 
+                . . 4 d f a a a a a a f d 4 . . 
+                . . 4 4 f c c c c c c f 4 4 . . 
+                . . . . . f f f f f f . . . . . 
+                . . . . . f f . . f f . . . . . 
+                `, SpriteKind.secondary)
+            tiles.placeOnTile(PersonajeSec2, tiles.getTileLocation(14, 10))
+        } else if (Esteban) {
+            PersonajeSec1 = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . f f f f f f f f f f . . . 
+                . . . f f f f f f f f f f . . . 
+                . . f f f f f f f f f f f f . . 
+                . . f f f f f f f f f f f f . . 
+                . . f f f f e e e e f f f f . . 
+                . f f e f b 8 4 4 8 b f e f f . 
+                . f f e 4 1 8 d d 8 1 4 e f f . 
+                . . f e e d d d d d d e e f . . 
+                . . . f e e 4 4 4 4 e e f . . . 
+                . . e 4 f 6 6 6 6 6 6 f 4 e . . 
+                . . 4 d f 6 6 6 6 6 6 f d 4 . . 
+                . . 4 4 f 9 9 9 9 9 9 f 4 4 . . 
+                . . . . . f f f f f f . . . . . 
+                . . . . . f f . . f f . . . . . 
+                `, SpriteKind.secondary)
+            tiles.placeOnTile(PersonajeSec1, tiles.getTileLocation(14, 5))
+            PersonajeSec2 = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . e e e e e e e e . . . . 
+                . . . e e e e e e e e e e . . . 
+                . . . e e e e e e e e e e . . . 
+                . . e e e e e e e e e e e e . . 
+                . . e e e e e e e e e e e e . . 
+                . . e e e f f e e f f e e e e . 
+                . . e e f 1 9 4 4 9 1 f e e e . 
+                . e e e e 1 9 d d 9 1 e e e . . 
+                . e e e e d d d d d d e e e . . 
+                . . e e e e 4 4 4 4 e e e e . . 
+                . . 4 4 e e a a a a a f 4 4 . . 
+                . . 4 d f a a a a a a f d 4 . . 
+                . . 4 4 f c c c c c c f 4 4 . . 
+                . . . . . f f f f f f . . . . . 
+                . . . . . f f . . f f . . . . . 
+                `, SpriteKind.secondary)
+            tiles.placeOnTile(PersonajeSec2, tiles.getTileLocation(14, 10))
+        } else if (Carla) {
+            PersonajeSec1 = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . f f f f f f f f f f . . . 
+                . . . f f f f f f f f f f . . . 
+                . . f f f f f f f f f f f f . . 
+                . . f f f f f f f f f f f f . . 
+                . . f f f f e e e e f f f f . . 
+                . f f e f b 8 4 4 8 b f e f f . 
+                . f f e 4 1 8 d d 8 1 4 e f f . 
+                . . f e e d d d d d d e e f . . 
+                . . . f e e 4 4 4 4 e e f . . . 
+                . . e 4 f 6 6 6 6 6 6 f 4 e . . 
+                . . 4 d f 6 6 6 6 6 6 f d 4 . . 
+                . . 4 4 f 9 9 9 9 9 9 f 4 4 . . 
+                . . . . . f f f f f f . . . . . 
+                . . . . . f f . . f f . . . . . 
+                `, SpriteKind.secondary)
+            tiles.placeOnTile(PersonajeSec1, tiles.getTileLocation(14, 5))
+            PersonajeSec2 = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . 4 4 4 4 4 4 4 4 . . . . 
+                . . . 4 4 4 4 4 4 4 4 4 4 . . . 
+                . . . 4 4 4 4 4 4 4 4 4 4 . . . 
+                . . 4 4 4 4 4 4 4 4 4 4 4 4 . . 
+                . . 4 4 4 4 4 4 4 4 4 4 4 4 . . 
+                . . 4 4 4 4 e e e e 4 4 4 4 . . 
+                . 4 4 e 4 b 7 4 4 7 b 4 e 4 4 . 
+                . 4 4 e 4 1 7 d d 7 1 4 e 4 4 . 
+                . . 4 e e d d d d d d e e 4 . . 
+                . . . f e e 4 4 4 4 e e f . . . 
+                . . e 4 f 7 7 7 7 7 7 f 4 e . . 
+                . . 4 d f 7 7 7 7 7 7 f d 4 . . 
+                . . 4 4 f 7 7 7 7 7 7 f 4 4 . . 
+                . . . . . 8 8 8 8 8 8 . . . . . 
+                . . . . . 8 8 . . 8 8 . . . . . 
+                `, SpriteKind.secondary)
+            tiles.placeOnTile(PersonajeSec2, tiles.getTileLocation(14, 10))
         }
     }
 })
@@ -802,6 +922,8 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location
     Martin = false
     Esteban = false
 })
+let PersonajeSec2: Sprite = null
+let PersonajeSec1: Sprite = null
 let projectile: Sprite = null
 let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
@@ -811,24 +933,18 @@ let Martin = false
 Martin = true
 Esteban = false
 Carla = false
-tiles.setTilemap(tiles.createTilemap(hex`100010000303060303030304030304010101010103070404040504040503040101010101030303030303060304030401010101010101010103040304040304010101010101010101070407040403040303030303010101010304030407030303040703070101010103040304050304040404040401010101070404040404040403030302030303030304030604040404050403030704040404110312041307040704040403030503040304050403030303030303070406030404030404030308090a090903030303030403040403030b0d0e0d0e01010101030404050403030b0f100f1001010101030504060503030c0d0e0d0e01010101030303030303030c0f100f10`, img`
-    . . . . . . . . . . . 2 2 2 2 2 
-    . . . . . . . . . . . 2 2 2 2 2 
-    . . . . . . . . . . . 2 2 2 2 2 
-    2 2 2 2 . . . . . . . 2 2 2 2 2 
-    2 2 2 2 . . . . . . . . . . . . 
-    2 2 2 2 . . . . . . . . . . . . 
-    2 2 2 2 . . . . . . . . . . . . 
-    2 2 2 2 . . . . . . . . . . 2 . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . 2 2 2 2 2 
-    . . . . . . . . . . . 2 2 2 2 2 
-    2 2 2 2 . . . . . . . 2 2 2 2 2 
-    2 2 2 2 . . . . . . . 2 2 2 2 2 
-    2 2 2 2 . . . . . . . 2 2 2 2 2 
-    `, [myTiles.transparency16,sprites.builtin.forestTiles0,sprites.dungeon.chestClosed,sprites.dungeon.floorLight1,sprites.dungeon.floorLight0,sprites.dungeon.floorLight5,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight2,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenInnerSouthEast,myTiles.tile4,myTiles.tile5,myTiles.tile6], TileScale.Sixteen))
+tiles.setTilemap(tiles.createTilemap(hex`12000a00000000000000000000000000000000000000000000000000000000000000000000000000000002020202020202020202020202020000000002020202020202020202020202020000000002020202020202020202020102020607000002020202020202020202020201020607000002020302020204020202050202020000000001020202020202020202020202020000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+    . . . . . . . . . . . . . . . . . . 
+    . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . 
+    . 2 . . . . . . . . . . . . . . 2 . 
+    . 2 . . . . . . . . . . . . . . 2 2 
+    . 2 . . . . . . . . . . . . . . . . 
+    . 2 . . . . . . . . . . . . . . . . 
+    . 2 . . . . . . . . . . . . . . 2 2 
+    . 2 . . . . . . . . . . . . . . 2 . 
+    . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . 
+    . . . . . . . . . . . . . . . . . . 
+    `, [myTiles.transparency16,sprites.dungeon.floorLight5,sprites.dungeon.floorLight2,myTiles.tile4,myTiles.tile5,myTiles.tile6,sprites.dungeon.stairWest,myTiles.tile7], TileScale.Sixteen))
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . f f f f f f f f . . . . 
@@ -852,22 +968,3 @@ scene.cameraFollowSprite(mySprite)
 statusbar = statusbars.create(16, 2, StatusBarKind.Health)
 statusbar.attachToSprite(mySprite)
 statusbar.value = 200
-let mySprite2 = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . 5 5 5 . . . . . . 
-    . . . . . . 5 5 5 5 5 . . . . . 
-    . . . . . 5 5 5 5 5 5 . . . . . 
-    . . . . . 5 f 5 5 5 5 . . . . . 
-    . . . . . 5 5 5 5 f 5 . . . . . 
-    . . . . . 5 5 5 5 5 5 . . . . . 
-    . . . . . 5 5 5 5 5 5 . . . . . 
-    . . . . . 5 5 5 5 5 5 . . . . . 
-    . . . . . 5 5 5 5 5 5 . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.secondary)
-tiles.placeOnTile(mySprite2, tiles.getTileLocation(14, 7))
