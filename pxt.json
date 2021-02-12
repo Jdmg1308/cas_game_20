@@ -12,13 +12,14 @@
         "README.md",
         "tilemap.g.jres",
         "tilemap.g.ts",
-        "main.py"
+        "main.py",
+        null
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.2.6",
+        "target": "1.2.10",
         "targetId": "arcade"
     },
     "supportedTargets": [
