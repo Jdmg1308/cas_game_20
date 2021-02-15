@@ -251,8 +251,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorLightMoss, function 
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile7`, function (sprite, location) {
     if (tiles.tileAtLocationEquals(tiles.getTileLocation(17, 5), assets.tile`tile7`) || tiles.tileAtLocationEquals(tiles.getTileLocation(17, 4), assets.tile`tile7`)) {
-        tiles.setTilemap(tilemap`level3`)
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(21, 42))
+        tiles.setTilemap(tilemap`level1`)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(15, 59))
         pause(100)
         music.playMelody("E - E - E - E - ", 640)
         if (Martin) {
@@ -916,7 +916,7 @@ let Martin = false
 Martin = true
 Esteban = false
 Carla = false
-tiles.setTilemap(tilemap`level4`)
+tiles.setTilemap(tilemap`level2`)
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . f f f f f f f f . . . . 
