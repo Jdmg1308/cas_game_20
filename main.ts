@@ -249,6 +249,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile4`, function (sprite, loc
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorLightMoss, function (sprite, location) {
     statusbar.value += -0.1
 })
+/**
+ * El que vuelva a tener un conflicto lo cascamos
+ */
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile7`, function (sprite, location) {
     if (tiles.tileAtLocationEquals(tiles.getTileLocation(17, 5), assets.tile`tile7`) || tiles.tileAtLocationEquals(tiles.getTileLocation(17, 4), assets.tile`tile7`)) {
         tiles.setTilemap(tilemap`level1`)
