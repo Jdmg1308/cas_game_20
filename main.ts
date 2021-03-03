@@ -1,6 +1,17 @@
 namespace SpriteKind {
     export const secondary = SpriteKind.create()
 }
+/**
+ * El que vuelva a tener un conflicto lo cascamos
+ */
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
+    if (true) {
+        tiles.setTilemap(tilemap`level5`)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(84, 37))
+        pause(100)
+        music.playMelody("E - E - E - E - ", 640)
+    }
+})
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Martin) {
         while (controller.up.isPressed()) {
@@ -249,9 +260,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile4`, function (sprite, loc
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorLightMoss, function (sprite, location) {
     statusbar.value += -0.1
 })
-/**
- * El que vuelva a tener un conflicto lo cascamos
- */
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile7`, function (sprite, location) {
     if (tiles.tileAtLocationEquals(tiles.getTileLocation(17, 5), assets.tile`tile7`) || tiles.tileAtLocationEquals(tiles.getTileLocation(17, 4), assets.tile`tile7`)) {
         tiles.setTilemap(tilemap`level1`)
