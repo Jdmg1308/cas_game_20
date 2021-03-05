@@ -1,9 +1,7 @@
 namespace SpriteKind {
     export const secondary = SpriteKind.create()
 }
-/**
- * El que vuelva a tener un conflicto lo cascamos
- */
+// El que vuelva a tener un conflicto lo cascamos
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
     if (true) {
         tiles.setTilemap(tilemap`level5`)
